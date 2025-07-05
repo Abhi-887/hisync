@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight, Phone, ArrowRight, Shield, Zap, Users } from "lucide-react";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +47,8 @@ export default function Navbar() {
     },
     { name: "Assessment", href: "#assessment" },
     { name: "Process", href: "#process" },
-    { name: "About", href: "#about" },
+    { name: "Our Product", href: "/product", isExternal: true },
+    { name: "About", href: "/about", isExternal: true },
   ];
 
   return (
@@ -86,26 +88,42 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, index) => (
               <div key={item.name} className="relative">
-                <motion.button
-                  onClick={() => {
-                    scrollToSection(item.href);
-                    setIsMobileMenuOpen(false);
-                  }}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 + 0.2, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="relative px-4 py-2 rounded-lg text-slate-600 hover:text-blue-600 apple-ease font-medium group flex items-center space-x-1"
-                  onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.name)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <span>{item.name}</span>
-                  {item.hasDropdown && (
-                    <ChevronRight className={`w-4 h-4 transition-transform duration-150 ${
-                      activeDropdown === item.name ? 'rotate-90' : ''
-                    }`} />
-                  )}
-                  <span className="absolute -bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 scale-x-0 transition-transform duration-200 group-hover:scale-x-100 rounded-full"></span>
-                </motion.button>
+                {item.isExternal ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 + 0.2, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  >
+                    <Link
+                      href={item.href}
+                      className="relative px-4 py-2 rounded-lg text-slate-600 hover:text-blue-600 apple-ease font-medium group flex items-center space-x-1"
+                    >
+                      <span>{item.name}</span>
+                      <span className="absolute -bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 scale-x-0 transition-transform duration-200 group-hover:scale-x-100 rounded-full"></span>
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.button
+                    onClick={() => {
+                      scrollToSection(item.href);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 + 0.2, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="relative px-4 py-2 rounded-lg text-slate-600 hover:text-blue-600 apple-ease font-medium group flex items-center space-x-1"
+                    onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.name)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <span>{item.name}</span>
+                    {item.hasDropdown && (
+                      <ChevronRight className={`w-4 h-4 transition-transform duration-150 ${
+                        activeDropdown === item.name ? 'rotate-90' : ''
+                      }`} />
+                    )}
+                    <span className="absolute -bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 scale-x-0 transition-transform duration-200 group-hover:scale-x-100 rounded-full"></span>
+                  </motion.button>
+                )}
                 
                 {/* Dropdown Menu */}
                 <AnimatePresence>
@@ -204,16 +222,27 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.03 + 0.1, duration: 0.2 }}
                 >
-                  <button
-                    onClick={() => {
-                      scrollToSection(item.href);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="flex items-center justify-between text-slate-700 hover:text-blue-600 font-semibold py-3 px-2 rounded-lg hover:bg-blue-50 apple-ease group w-full text-left"
-                  >
-                    <span className="text-lg">{item.name}</span>
-                    <ChevronRight className="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 apple-ease" />
-                  </button>
+                  {item.isExternal ? (
+                    <Link
+                      href={item.href}
+                      className="flex items-center justify-between text-slate-700 hover:text-blue-600 font-semibold py-3 px-2 rounded-lg hover:bg-blue-50 apple-ease group w-full text-left"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <span className="text-lg">{item.name}</span>
+                      <ChevronRight className="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 apple-ease" />
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        scrollToSection(item.href);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="flex items-center justify-between text-slate-700 hover:text-blue-600 font-semibold py-3 px-2 rounded-lg hover:bg-blue-50 apple-ease group w-full text-left"
+                    >
+                      <span className="text-lg">{item.name}</span>
+                      <ChevronRight className="w-5 h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 apple-ease" />
+                    </button>
+                  )}
                   {item.hasDropdown && (
                     <div className="ml-4 mt-2 space-y-2">
                       {item.dropdownItems?.map((dropdownItem, idx) => (
