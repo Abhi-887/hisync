@@ -25,22 +25,6 @@ export default function ProductHero() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Enhanced Back Button */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <Link 
-            href="/"
-            className="group inline-flex items-center space-x-3 px-4 py-3 rounded-xl bg-white/60 backdrop-blur-md border border-slate-200/50 text-slate-600 hover:text-slate-800 hover:bg-white/80 transition-all duration-300 shadow-sm hover:shadow-md"
-          >
-            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200" />
-            <span className="font-medium">Back to Home</span>
-          </Link>
-        </motion.div>
-
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <motion.div

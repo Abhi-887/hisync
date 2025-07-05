@@ -35,6 +35,7 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
+    { name: "Home", href: "/", isExternal: true },
     { 
       name: "Services", 
       href: "#services",
