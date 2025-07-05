@@ -9,6 +9,10 @@ import FooterSection from "@/components/sections/FooterSection";
 import ProblemSection from "@/components/product/ProblemSection";
 import SolutionSection from "@/components/product/SolutionSection";
 import FeaturesSection from "@/components/product/FeaturesSection";
+import RoadmapSection from "@/components/product/RoadmapSection";
+import WorkflowSection from "@/components/product/WorkflowSection";
+import ReVerificationSection from "@/components/product/ReVerificationSection";
+import CaseStudySection from "@/components/product/CaseStudySection";
 import ProductHero from "@/components/product/ProductHero";
 import ProductCTA from "@/components/product/ProductCTA";
 
@@ -21,6 +25,10 @@ export default function ProductPage() {
       <ProblemSection />
       <SolutionSection />
       <FeaturesSection />
+      <RoadmapSection />
+      <WorkflowSection />
+      <ReVerificationSection />
+      <CaseStudySection />
       <ProductCTA />
       
       <FooterSection />
