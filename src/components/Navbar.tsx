@@ -46,10 +46,9 @@ export default function Navbar() {
         { name: "Consulting", href: "#consulting", icon: <Users className="w-4 h-4" /> },
       ]
     },
-    { name: "Assessment", href: "#assessment" },
-    { name: "Process", href: "#process" },
     { name: "Our Product", href: "/product", isExternal: true },
     { name: "About", href: "/about", isExternal: true },
+    { name: "Contact Us", href: "/contact", isExternal: true },
   ];
 
   return (
@@ -87,7 +86,7 @@ export default function Navbar() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-4">
             {navItems.map((item, index) => (
               <div key={item.name} className="relative">
                 {item.isExternal ? (
@@ -98,7 +97,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className="relative px-3 py-2 rounded-xl text-slate-600 hover:text-blue-600 transition-all duration-300 font-medium group flex items-center space-x-1 hover:bg-blue-50/50"
+                      className="relative px-4 py-2 rounded-xl text-slate-600 hover:text-blue-600 transition-all duration-300 font-medium group flex items-center space-x-1 hover:bg-blue-50/50"
                     >
                       <span className="relative">
                         {item.name}
@@ -115,7 +114,7 @@ export default function Navbar() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 + 0.2, duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="relative px-3 py-2 rounded-xl text-slate-600 hover:text-blue-600 transition-all duration-300 font-medium group flex items-center space-x-1 hover:bg-blue-50/50"
+                    className="relative px-4 py-2 rounded-xl text-slate-600 hover:text-blue-600 transition-all duration-300 font-medium group flex items-center space-x-1 hover:bg-blue-50/50"
                     onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.name)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
@@ -174,7 +173,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button
                 variant="ghost"
