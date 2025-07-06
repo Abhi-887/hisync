@@ -15,7 +15,7 @@ export default function AboutPage() {
       role: "Founder",
       description: "Rohit is a seasoned technology leader with a strong background in app development, web technologies, research, and digital product launches. Rohit has over 13 years of experience spanning several multinational corporations, including those connected to Silicon Valley. For over five years, he served as Product Head at The Infinite Reality, a multi billion-dollar organization.",
       achievements: "His expertise lies in bridging technical innovation with business outcomes, making him a valuable asset in today's fast-evolving digital landscape.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/gaurrohit660/",
       image: "/images/our_team/rohit.webp"
     },
     {
@@ -23,7 +23,7 @@ export default function AboutPage() {
       role: "Founder",
       description: "Avinash is an accomplished product leader with over 14 years of experience in the technology industry, specializing in SaaS products and digital innovation. Holding a Bachelor of Engineering degree, he served as the Director of Product Management at RektGlobal Inc. His deep understanding of product lifecycle management and forward-thinking approach make him a key force behind successful, user-centric SaaS platforms.",
       achievements: "His visionary leadership in product strategy has transformed multiple enterprises across global markets.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/mynamavinash/",
       image: "/images/our_team/avinash.webp"
     },
     {
@@ -31,7 +31,7 @@ export default function AboutPage() {
       role: "Co-Founder",
       description: "Amit has endeavoured through his 20+ years of professional adventure in world's leading consulting firms playing a pivotal role in the pursuits team along with gaining himself the position as the Director in Protiviti. He has led several large scale asset management transformational projects in 15+ countries.",
       achievements: "Amit has completed his PGDBM (India) and holds professional certification from Institute of Risk Management (South Africa).",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/amit-singh-chauhan-79a5328/",
       image: "/images/our_team/amit.webp"
     },
     {
@@ -39,7 +39,7 @@ export default function AboutPage() {
       role: "Co-Founder",
       description: "Ujjwal has over 14 years of professional experience and worked with two of the world's leading consulting firms for over a decade in Risk and Business Advisory domain. Ujjwal, in his last role served as an Associate Director with KPMG where he led Enterprise Asset Management solution. Ujjwal have led projects in 10+ countries and have worked with various multi billion dollar organizations across Asia, Africa and Middle east markets.",
       achievements: "Ujjwal is a Chartered Accountant from India qualified at young age of 22.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/ujjwalagrawal1/",
       image: "/images/our_team/ujjwal.webp"
     }
   ];
@@ -53,15 +53,15 @@ export default function AboutPage() {
         {/* Premium Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Sophisticated gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.02] via-slate-900/[0.01] to-indigo-900/[0.03]"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.04] via-slate-900/[0.02] to-indigo-900/[0.06]"></div>
           
           {/* Enterprise grid pattern */}
-          <div className="absolute inset-0 opacity-[0.015]">
+          <div className="absolute inset-0 opacity-[0.4]">
             <div className="h-full w-full" style={{
               backgroundImage: `
-                linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
-                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 1px, transparent 1px)
+                linear-gradient(rgba(99, 102, 241, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 1px, transparent 1px)
               `,
               backgroundSize: '60px 60px, 60px 60px, 30px 30px'
             }}></div>
@@ -82,17 +82,19 @@ export default function AboutPage() {
           <div className="absolute top-1/2 left-16 w-16 h-16 bg-gradient-to-br from-cyan-200/[0.1] to-blue-200/[0.08] rounded-xl rotate-45 blur-sm"></div>
           
           {/* Enterprise-grade scanlines effect */}
-          <div className="absolute inset-0 opacity-[0.008]">
+          <div className="absolute inset-0 opacity-[0.025]">
             <div className="h-full w-full" style={{
               backgroundImage: `repeating-linear-gradient(
                 0deg,
                 transparent,
                 transparent 2px,
-                rgba(59, 130, 246, 0.05) 2px,
-                rgba(59, 130, 246, 0.05) 4px
+                rgba(59, 130, 246, 0.12) 2px,
+                rgba(59, 130, 246, 0.12) 4px
               )`
             }}></div>
           </div>
+          {/* Additional modern grid overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.06)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_40%_at_50%_50%,#000_50%,transparent_90%)]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -157,6 +159,19 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/[0.01] via-transparent to-indigo-900/[0.015]"></div>
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200/30 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-200/30 to-transparent"></div>
+          {/* Beautiful grid lines */}
+          <div className="absolute inset-0 opacity-[0.02]">
+            <div className="h-full w-full" style={{
+              backgroundImage: `
+                linear-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px)
+              `,
+              backgroundSize: '40px 40px'
+            }}></div>
+          </div>
+          {/* Floating orbs */}
+          <div className="absolute top-20 left-1/5 w-64 h-64 bg-gradient-to-r from-blue-400/[0.05] via-indigo-400/[0.03] to-purple-400/[0.02] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-1/5 w-48 h-48 bg-gradient-to-r from-violet-400/[0.03] via-purple-400/[0.05] to-fuchsia-400/[0.02] rounded-full blur-3xl animate-float-delayed"></div>
         </div>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -250,25 +265,36 @@ export default function AboutPage() {
         {/* Premium background elements */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.008] via-transparent to-indigo-900/[0.012]"></div>
+          {/* Beautiful enhanced grid lines */}
+          <div className="absolute inset-0 opacity-[0.025]">
+            <div className="h-full w-full" style={{
+              backgroundImage: `
+                linear-gradient(rgba(99, 102, 241, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.2) 1px, transparent 1px),
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 2px, transparent 2px)
+              `,
+              backgroundSize: '50px 50px, 50px 50px, 25px 25px'
+            }}></div>
+          </div>
           {/* Floating animated orbs */}
           <div className="absolute top-20 left-1/5 w-72 h-72 bg-gradient-to-r from-blue-400/[0.06] via-indigo-400/[0.04] to-purple-400/[0.03] rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-20 right-1/5 w-64 h-64 bg-gradient-to-r from-violet-400/[0.04] via-purple-400/[0.06] to-fuchsia-400/[0.03] rounded-full blur-3xl animate-float-delayed"></div>
-          {/* Enterprise grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.012)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.012)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_40%,transparent_100%)]"></div>
-          {/* Subtle scanlines */}
-          <div className="absolute inset-0 opacity-[0.006]">
+          {/* Enterprise grid overlay - the beautiful lines */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.015)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_40%,transparent_100%)]"></div>
+          {/* Subtle scanlines for premium effect */}
+          <div className="absolute inset-0 opacity-[0.008]">
             <div className="h-full w-full" style={{
               backgroundImage: `repeating-linear-gradient(
                 0deg,
                 transparent,
                 transparent 3px,
-                rgba(59, 130, 246, 0.04) 3px,
-                rgba(59, 130, 246, 0.04) 6px
+                rgba(59, 130, 246, 0.06) 3px,
+                rgba(59, 130, 246, 0.06) 6px
               )`
             }}></div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -348,10 +374,16 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`group relative overflow-hidden ${advantage.bgColor} rounded-3xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 border border-white/50 hover:border-white/80`}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className={`group relative overflow-hidden ${advantage.bgColor} rounded-3xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 border border-white/50 hover:border-white/80 backdrop-blur-sm`}
               >
+                {/* Enhanced background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-blue-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                {/* Subtle shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] duration-1000"></div>
+                
                 <div className="relative z-10">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${advantage.gradient} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${advantage.gradient} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                     {advantage.icon}
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-slate-800 transition-colors">
@@ -361,9 +393,6 @@ export default function AboutPage() {
                     {advantage.description}
                   </p>
                 </div>
-                
-                {/* Hover effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.div>
             ))}
           </div>
@@ -376,8 +405,21 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.03)_0%,transparent_50%)]"></div>
           <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/[0.008] via-transparent to-indigo-500/[0.012]"></div>
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.015)_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+          {/* Beautiful enhanced grid pattern */}
+          <div className="absolute inset-0 opacity-[0.03]">
+            <div className="h-full w-full" style={{
+              backgroundImage: `
+                linear-gradient(rgba(99, 102, 241, 0.25) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.25) 1px, transparent 1px)
+              `,
+              backgroundSize: '30px 30px'
+            }}></div>
+          </div>
+          {/* Premium grid overlay with beautiful lines */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.02)_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+          {/* Floating orbs */}
+          <div className="absolute top-32 left-1/6 w-48 h-48 bg-gradient-to-r from-blue-400/[0.04] via-indigo-400/[0.03] to-purple-400/[0.02] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-32 right-1/6 w-40 h-40 bg-gradient-to-r from-violet-400/[0.03] via-purple-400/[0.04] to-fuchsia-400/[0.02] rounded-full blur-3xl animate-float-delayed"></div>
         </div>
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -453,9 +495,14 @@ export default function AboutPage() {
                           />
                         </div>
                       </div>
-                      <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <a 
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 hover:from-blue-700 hover:to-indigo-700"
+                      >
                         <Linkedin className="w-5 h-5 text-white" />
-                      </div>
+                      </a>
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-slate-800 transition-colors">
@@ -487,11 +534,42 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-4 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/20 relative overflow-hidden">
-        {/* Background elements */}
+      <section className="py-32 px-4 bg-gradient-to-br from-gray-50/70 via-blue-50/40 to-indigo-50/30 relative overflow-hidden">
+        {/* Premium background elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-1/4 w-48 h-48 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.008] via-transparent to-indigo-900/[0.015]"></div>
+          {/* Beautiful grid lines for CTA */}
+          <div className="absolute inset-0 opacity-[0.02]">
+            <div className="h-full w-full" style={{
+              backgroundImage: `
+                linear-gradient(rgba(99, 102, 241, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.2) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 1px, transparent 1px)
+              `,
+              backgroundSize: '60px 60px, 60px 60px, 30px 30px'
+            }}></div>
+          </div>
+          {/* Enhanced floating orbs */}
+          <div className="absolute top-20 left-1/4 w-80 h-80 bg-gradient-to-r from-blue-400/[0.08] via-indigo-400/[0.06] to-purple-400/[0.04] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-r from-purple-400/[0.06] via-pink-400/[0.08] to-fuchsia-400/[0.04] rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute top-1/2 left-1/6 w-48 h-48 bg-gradient-to-r from-cyan-400/[0.05] via-blue-400/[0.07] to-indigo-400/[0.05] rounded-full blur-3xl animate-pulse"></div>
+          {/* Enterprise mesh pattern with visible lines */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.015)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,#000_50%,transparent_100%)]"></div>
+          {/* Subtle geometric accents */}
+          <div className="absolute top-32 right-1/5 w-20 h-20 bg-gradient-to-br from-blue-200/[0.06] to-indigo-200/[0.08] rounded-2xl rotate-12 blur-sm"></div>
+          <div className="absolute bottom-40 left-1/5 w-16 h-16 bg-gradient-to-br from-purple-200/[0.04] to-violet-200/[0.06] rounded-xl -rotate-12 blur-sm"></div>
+          {/* Premium scanlines with better visibility */}
+          <div className="absolute inset-0 opacity-[0.006]">
+            <div className="h-full w-full" style={{
+              backgroundImage: `repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 4px,
+                rgba(59, 130, 246, 0.05) 4px,
+                rgba(59, 130, 246, 0.05) 8px
+              )`
+            }}></div>
+          </div>
         </div>
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
