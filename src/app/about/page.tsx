@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Shield, Award, Users, CheckCircle, Linkedin, Globe, Target, TrendingUp, Star, Sparkles, Brain, Zap, Rocket, Building2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/sections/FooterSection";
@@ -10,36 +11,36 @@ import FooterSection from "@/components/sections/FooterSection";
 export default function AboutPage() {
   const teamMembers = [
     {
-      name: "Amit S. Chauhan",
-      role: "Director",
-      description: "Amit has endeavoured through his 20+ years of professional adventure in world's leading consulting firms playing a pivotal role in the pursuits team along with gaining himself the position as the Director in Protiviti. He has led several large scale asset management transformational projects in 15+ countries.",
-      achievements: "Amit has completed his PGDBM (India) and holds professional certification from Institute of Risk Management (South Africa).",
-      linkedin: "#",
-      image: "/api/placeholder/120/120"
-    },
-    {
       name: "Rohit Gaur",
-      role: "Technology Leader",
+      role: "Founder",
       description: "Rohit is a seasoned technology leader with a strong background in app development, web technologies, research, and digital product launches. Rohit has over 13 years of experience spanning several multinational corporations, including those connected to Silicon Valley. For over five years, he served as Product Head at The Infinite Reality, a multi billion-dollar organization.",
       achievements: "His expertise lies in bridging technical innovation with business outcomes, making him a valuable asset in today's fast-evolving digital landscape.",
       linkedin: "#",
-      image: "/api/placeholder/120/120"
-    },
-    {
-      name: "Ujjwal Agrawal",
-      role: "Associate Director",
-      description: "Ujjwal has over 14 years of professional experience and worked with two of the world's leading consulting firms for over a decade in Risk and Business Advisory domain. Ujjwal, in his last role served as an Associate Director with KPMG where he led Enterprise Asset Management solution. Ujjwal have led projects in 10+ countries and have worked with various multi billion dollar organizations across Asia, Africa and Middle east markets.",
-      achievements: "Ujjwal is a Chartered Accountant from India qualified at young age of 22.",
-      linkedin: "#",
-      image: "/api/placeholder/120/120"
+      image: "/images/our_team/rohit.webp"
     },
     {
       name: "Avinash K Tripathi",
-      role: "Director of Product Management",
+      role: "Founder",
       description: "Avinash is an accomplished product leader with over 14 years of experience in the technology industry, specializing in SaaS products and digital innovation. Holding a Bachelor of Engineering degree, he served as the Director of Product Management at RektGlobal Inc. His deep understanding of product lifecycle management and forward-thinking approach make him a key force behind successful, user-centric SaaS platforms.",
-      achievements: "",
+      achievements: "His visionary leadership in product strategy has transformed multiple enterprises across global markets.",
       linkedin: "#",
-      image: "/api/placeholder/120/120"
+      image: "/images/our_team/avinash.webp"
+    },
+    {
+      name: "Amit S. Chauhan",
+      role: "Co-Founder",
+      description: "Amit has endeavoured through his 20+ years of professional adventure in world's leading consulting firms playing a pivotal role in the pursuits team along with gaining himself the position as the Director in Protiviti. He has led several large scale asset management transformational projects in 15+ countries.",
+      achievements: "Amit has completed his PGDBM (India) and holds professional certification from Institute of Risk Management (South Africa).",
+      linkedin: "#",
+      image: "/images/our_team/amit.webp"
+    },
+    {
+      name: "Ujjwal Agrawal",
+      role: "Co-Founder",
+      description: "Ujjwal has over 14 years of professional experience and worked with two of the world's leading consulting firms for over a decade in Risk and Business Advisory domain. Ujjwal, in his last role served as an Associate Director with KPMG where he led Enterprise Asset Management solution. Ujjwal have led projects in 10+ countries and have worked with various multi billion dollar organizations across Asia, Africa and Middle east markets.",
+      achievements: "Ujjwal is a Chartered Accountant from India qualified at young age of 22.",
+      linkedin: "#",
+      image: "/images/our_team/ujjwal.webp"
     }
   ];
 
@@ -48,39 +49,53 @@ export default function AboutPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative py-32 lg:py-40 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
-        {/* Enhanced Background Elements */}
+      <section className="relative py-32 lg:py-40 px-4 bg-gradient-to-br from-gray-50 via-blue-50/40 to-indigo-50/60 overflow-hidden">
+        {/* Premium Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Floating orbs with subtle animation */}
-          <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-1/4 w-48 h-48 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-float-delayed"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-cyan-400/5 to-emerald-400/5 rounded-full blur-3xl animate-pulse"></div>
+          {/* Sophisticated gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.02] via-slate-900/[0.01] to-indigo-900/[0.03]"></div>
           
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-[0.02]">
+          {/* Enterprise grid pattern */}
+          <div className="absolute inset-0 opacity-[0.015]">
             <div className="h-full w-full" style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, rgb(148 163 184) 1px, transparent 0)`,
-              backgroundSize: '24px 24px'
+              backgroundImage: `
+                linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 1px, transparent 1px)
+              `,
+              backgroundSize: '60px 60px, 60px 60px, 30px 30px'
+            }}></div>
+          </div>
+          
+          {/* Floating premium orbs */}
+          <div className="absolute top-16 left-1/6 w-96 h-96 bg-gradient-to-r from-blue-400/[0.08] via-indigo-400/[0.06] to-purple-400/[0.04] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-16 right-1/6 w-80 h-80 bg-gradient-to-r from-violet-400/[0.06] via-purple-400/[0.08] to-fuchsia-400/[0.04] rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-r from-cyan-400/[0.05] via-blue-400/[0.07] to-indigo-400/[0.06] rounded-full blur-3xl animate-pulse"></div>
+          
+          {/* Premium mesh gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-50/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-50/10 to-blue-50/20"></div>
+          
+          {/* Subtle geometric patterns */}
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-blue-200/[0.08] to-indigo-200/[0.06] rounded-3xl rotate-12 blur-sm"></div>
+          <div className="absolute bottom-32 right-32 w-24 h-24 bg-gradient-to-br from-purple-200/[0.06] to-violet-200/[0.08] rounded-2xl -rotate-12 blur-sm"></div>
+          <div className="absolute top-1/2 left-16 w-16 h-16 bg-gradient-to-br from-cyan-200/[0.1] to-blue-200/[0.08] rounded-xl rotate-45 blur-sm"></div>
+          
+          {/* Enterprise-grade scanlines effect */}
+          <div className="absolute inset-0 opacity-[0.008]">
+            <div className="h-full w-full" style={{
+              backgroundImage: `repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(59, 130, 246, 0.05) 2px,
+                rgba(59, 130, 246, 0.05) 4px
+              )`
             }}></div>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          {/* Enhanced Back Button */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            <Link 
-              href="/"
-              className="group inline-flex items-center space-x-3 px-4 py-3 rounded-xl bg-white/60 backdrop-blur-md border border-slate-200/50 text-slate-600 hover:text-slate-800 hover:bg-white/80 transition-all duration-300 shadow-sm hover:shadow-md"
-            >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-200" />
-              <span className="font-medium">Back to Home</span>
-            </Link>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -136,7 +151,13 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-32 px-4 bg-white">
+      <section className="py-32 px-4 bg-gradient-to-br from-white via-gray-50/30 to-blue-50/20 relative overflow-hidden">
+        {/* Premium background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/[0.01] via-transparent to-indigo-900/[0.015]"></div>
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200/30 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-200/30 to-transparent"></div>
+        </div>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -225,7 +246,28 @@ export default function AboutPage() {
       </section>
 
       {/* Our Unique Advantage */}
-      <section className="py-32 px-4 bg-gradient-to-br from-slate-50 to-blue-50/20">
+      <section className="py-32 px-4 bg-gradient-to-br from-slate-50/80 via-blue-50/30 to-indigo-50/20 relative overflow-hidden">
+        {/* Premium background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.008] via-transparent to-indigo-900/[0.012]"></div>
+          {/* Floating animated orbs */}
+          <div className="absolute top-20 left-1/5 w-72 h-72 bg-gradient-to-r from-blue-400/[0.06] via-indigo-400/[0.04] to-purple-400/[0.03] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-1/5 w-64 h-64 bg-gradient-to-r from-violet-400/[0.04] via-purple-400/[0.06] to-fuchsia-400/[0.03] rounded-full blur-3xl animate-float-delayed"></div>
+          {/* Enterprise grid overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.012)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.012)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_40%,transparent_100%)]"></div>
+          {/* Subtle scanlines */}
+          <div className="absolute inset-0 opacity-[0.006]">
+            <div className="h-full w-full" style={{
+              backgroundImage: `repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(59, 130, 246, 0.04) 3px,
+                rgba(59, 130, 246, 0.04) 6px
+              )`
+            }}></div>
+          </div>
+        </div>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -329,7 +371,14 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-32 px-4 bg-white">
+      <section className="py-32 px-4 bg-gradient-to-b from-gray-50/50 via-white to-blue-50/30 relative overflow-hidden">
+        {/* Premium background elements */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.03)_0%,transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/[0.008] via-transparent to-indigo-500/[0.012]"></div>
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.015)_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+        </div>
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -393,8 +442,16 @@ export default function AboutPage() {
                 <div className="relative z-10">
                   <div className="flex items-start space-x-6 mb-8">
                     <div className="relative flex-shrink-0">
-                      <div className="w-24 h-24 bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-xl group-hover:scale-105 transition-transform duration-300">
-                        {member.name.split(' ').map(n => n[0]).join('')}
+                      <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-xl group-hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 p-0.5">
+                        <div className="w-full h-full rounded-2xl overflow-hidden bg-white">
+                          <Image
+                            src={member.image}
+                            alt={member.name}
+                            width={96}
+                            height={96}
+                            className="w-full h-full object-cover rounded-2xl"
+                          />
+                        </div>
                       </div>
                       <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <Linkedin className="w-5 h-5 text-white" />
