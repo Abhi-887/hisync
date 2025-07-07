@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function FooterSection() {
   return (
@@ -17,10 +18,14 @@ export default function FooterSection() {
               viewport={{ once: true }}
               className="flex items-center space-x-3 mb-6"
             >
-              <div className="h-8 w-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">H</span>
-              </div>
-              <span className="text-2xl font-bold text-slate-900">HiSync</span>
+             <Image
+                               src="/images/logo/hisync_logo_black_one.webp"
+                               alt="HISYNC Logo"
+                               width={130}
+                               height={100}
+                               // className="w-10 h-10 object-contain"
+                               priority
+                             />
             </motion.div>
             
             <motion.p 

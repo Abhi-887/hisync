@@ -49,52 +49,52 @@ export default function AboutPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative py-32 lg:py-40 px-4 bg-gradient-to-br from-gray-50 via-blue-50/40 to-indigo-50/60 overflow-hidden">
+      <section className="relative py-32 lg:py-40 px-4 bg-gradient-to-br from-gray-50/30 via-blue-50/20 to-indigo-50/30 overflow-hidden">
         {/* Premium Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Sophisticated gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.04] via-slate-900/[0.02] to-indigo-900/[0.06]"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.02] via-slate-900/[0.01] to-indigo-900/[0.03]"></div>
           
           {/* Enterprise grid pattern */}
-          <div className="absolute inset-0 opacity-[0.4]">
+          <div className="absolute inset-0 opacity-[0.2]">
             <div className="h-full w-full" style={{
               backgroundImage: `
-                linear-gradient(rgba(99, 102, 241, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99, 102, 241, 0.3) 1px, transparent 1px),
-                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 1px, transparent 1px)
+                linear-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 1px, transparent 1px)
               `,
               backgroundSize: '60px 60px, 60px 60px, 30px 30px'
             }}></div>
           </div>
           
           {/* Floating premium orbs */}
-          <div className="absolute top-16 left-1/6 w-96 h-96 bg-gradient-to-r from-blue-400/[0.08] via-indigo-400/[0.06] to-purple-400/[0.04] rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-16 right-1/6 w-80 h-80 bg-gradient-to-r from-violet-400/[0.06] via-purple-400/[0.08] to-fuchsia-400/[0.04] rounded-full blur-3xl animate-float-delayed"></div>
-          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-r from-cyan-400/[0.05] via-blue-400/[0.07] to-indigo-400/[0.06] rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-16 left-1/6 w-96 h-96 bg-gradient-to-r from-blue-400/[0.04] via-indigo-400/[0.03] to-purple-400/[0.02] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-16 right-1/6 w-80 h-80 bg-gradient-to-r from-violet-400/[0.03] via-purple-400/[0.04] to-fuchsia-400/[0.02] rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-r from-cyan-400/[0.025] via-blue-400/[0.035] to-indigo-400/[0.03] rounded-full blur-3xl animate-pulse"></div>
           
           {/* Premium mesh gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-50/20 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-50/10 to-blue-50/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-50/10 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-50/5 to-blue-50/10"></div>
           
           {/* Subtle geometric patterns */}
-          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-blue-200/[0.08] to-indigo-200/[0.06] rounded-3xl rotate-12 blur-sm"></div>
-          <div className="absolute bottom-32 right-32 w-24 h-24 bg-gradient-to-br from-purple-200/[0.06] to-violet-200/[0.08] rounded-2xl -rotate-12 blur-sm"></div>
-          <div className="absolute top-1/2 left-16 w-16 h-16 bg-gradient-to-br from-cyan-200/[0.1] to-blue-200/[0.08] rounded-xl rotate-45 blur-sm"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-blue-200/[0.04] to-indigo-200/[0.03] rounded-3xl rotate-12 blur-sm"></div>
+          <div className="absolute bottom-32 right-32 w-24 h-24 bg-gradient-to-br from-purple-200/[0.03] to-violet-200/[0.04] rounded-2xl -rotate-12 blur-sm"></div>
+          <div className="absolute top-1/2 left-16 w-16 h-16 bg-gradient-to-br from-cyan-200/[0.05] to-blue-200/[0.04] rounded-xl rotate-45 blur-sm"></div>
           
           {/* Enterprise-grade scanlines effect */}
-          <div className="absolute inset-0 opacity-[0.025]">
+          <div className="absolute inset-0 opacity-[0.015]">
             <div className="h-full w-full" style={{
               backgroundImage: `repeating-linear-gradient(
                 0deg,
                 transparent,
                 transparent 2px,
-                rgba(59, 130, 246, 0.12) 2px,
-                rgba(59, 130, 246, 0.12) 4px
+                rgba(59, 130, 246, 0.08) 2px,
+                rgba(59, 130, 246, 0.08) 4px
               )`
             }}></div>
           </div>
           {/* Additional modern grid overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.06)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_40%_at_50%_50%,#000_50%,transparent_90%)]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_40%_at_50%_50%,#000_50%,transparent_90%)]"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -153,25 +153,10 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-32 px-4 bg-gradient-to-br from-white via-gray-50/30 to-blue-50/20 relative overflow-hidden">
-        {/* Premium background elements */}
+      <section className="py-32 px-4 bg-white relative">
+        {/* Very subtle background elements - minimal & clean */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/[0.01] via-transparent to-indigo-900/[0.015]"></div>
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200/30 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-200/30 to-transparent"></div>
-          {/* Beautiful grid lines */}
-          <div className="absolute inset-0 opacity-[0.02]">
-            <div className="h-full w-full" style={{
-              backgroundImage: `
-                linear-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px)
-              `,
-              backgroundSize: '40px 40px'
-            }}></div>
-          </div>
-          {/* Floating orbs */}
-          <div className="absolute top-20 left-1/5 w-64 h-64 bg-gradient-to-r from-blue-400/[0.05] via-indigo-400/[0.03] to-purple-400/[0.02] rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-1/5 w-48 h-48 bg-gradient-to-r from-violet-400/[0.03] via-purple-400/[0.05] to-fuchsia-400/[0.02] rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-50/20 to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -261,35 +246,44 @@ export default function AboutPage() {
       </section>
 
       {/* Our Unique Advantage */}
-      <section className="py-32 px-4 bg-gradient-to-br from-slate-50/80 via-blue-50/30 to-indigo-50/20 relative overflow-hidden">
-        {/* Premium background elements */}
+      <section className="py-32 px-4 bg-gradient-to-br from-slate-50/30 via-blue-50/15 to-indigo-50/20 relative overflow-hidden">
+        {/* Enhanced premium background - this one gets the spotlight */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.008] via-transparent to-indigo-900/[0.012]"></div>
-          {/* Beautiful enhanced grid lines */}
-          <div className="absolute inset-0 opacity-[0.025]">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/[0.02] via-blue-900/[0.01] to-indigo-900/[0.03]"></div>
+          
+          {/* Beautiful floating elements */}
+          <div className="absolute top-16 left-1/6 w-96 h-96 bg-gradient-to-r from-blue-400/[0.04] via-indigo-400/[0.03] to-purple-400/[0.02] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-16 right-1/6 w-80 h-80 bg-gradient-to-r from-violet-400/[0.03] via-purple-400/[0.04] to-fuchsia-400/[0.02] rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-r from-cyan-400/[0.025] via-blue-400/[0.035] to-indigo-400/[0.03] rounded-full blur-3xl animate-pulse"></div>
+          
+          {/* Premium grid pattern */}
+          <div className="absolute inset-0 opacity-[0.04]">
             <div className="h-full w-full" style={{
               backgroundImage: `
-                linear-gradient(rgba(99, 102, 241, 0.2) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99, 102, 241, 0.2) 1px, transparent 1px),
-                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 2px, transparent 2px)
+                linear-gradient(rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 2px, transparent 2px)
               `,
               backgroundSize: '50px 50px, 50px 50px, 25px 25px'
             }}></div>
           </div>
-          {/* Floating animated orbs */}
-          <div className="absolute top-20 left-1/5 w-72 h-72 bg-gradient-to-r from-blue-400/[0.06] via-indigo-400/[0.04] to-purple-400/[0.03] rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-1/5 w-64 h-64 bg-gradient-to-r from-violet-400/[0.04] via-purple-400/[0.06] to-fuchsia-400/[0.03] rounded-full blur-3xl animate-float-delayed"></div>
-          {/* Enterprise grid overlay - the beautiful lines */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.015)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_40%,transparent_100%)]"></div>
-          {/* Subtle scanlines for premium effect */}
-          <div className="absolute inset-0 opacity-[0.008]">
+          
+          {/* Subtle geometric patterns */}
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-blue-200/[0.03] to-indigo-200/[0.04] rounded-3xl rotate-12 blur-sm"></div>
+          <div className="absolute bottom-32 right-32 w-24 h-24 bg-gradient-to-br from-purple-200/[0.04] to-violet-200/[0.03] rounded-2xl -rotate-12 blur-sm"></div>
+          
+          {/* Enterprise grid overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.02)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_40%,transparent_100%)]"></div>
+          
+          {/* Premium scanlines */}
+          <div className="absolute inset-0 opacity-[0.015]">
             <div className="h-full w-full" style={{
               backgroundImage: `repeating-linear-gradient(
                 0deg,
                 transparent,
                 transparent 3px,
-                rgba(59, 130, 246, 0.06) 3px,
-                rgba(59, 130, 246, 0.06) 6px
+                rgba(59, 130, 246, 0.04) 3px,
+                rgba(59, 130, 246, 0.04) 6px
               )`
             }}></div>
           </div>
@@ -375,10 +369,10 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className={`group relative overflow-hidden ${advantage.bgColor} rounded-3xl p-8 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 border border-white/50 hover:border-white/80 backdrop-blur-sm`}
+                className={`group relative overflow-hidden ${advantage.bgColor} rounded-3xl p-8 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500 border border-white/30 hover:border-white/50 backdrop-blur-sm`}
               >
                 {/* Enhanced background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-blue-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-blue-50/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 {/* Subtle shine effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%] duration-1000"></div>
                 
@@ -400,26 +394,10 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-32 px-4 bg-gradient-to-b from-gray-50/50 via-white to-blue-50/30 relative overflow-hidden">
-        {/* Premium background elements */}
+      <section className="py-32 px-4 bg-white relative">
+        {/* Clean and minimal background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.03)_0%,transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/[0.008] via-transparent to-indigo-500/[0.012]"></div>
-          {/* Beautiful enhanced grid pattern */}
-          <div className="absolute inset-0 opacity-[0.03]">
-            <div className="h-full w-full" style={{
-              backgroundImage: `
-                linear-gradient(rgba(99, 102, 241, 0.25) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99, 102, 241, 0.25) 1px, transparent 1px)
-              `,
-              backgroundSize: '30px 30px'
-            }}></div>
-          </div>
-          {/* Premium grid overlay with beautiful lines */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.02)_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
-          {/* Floating orbs */}
-          <div className="absolute top-32 left-1/6 w-48 h-48 bg-gradient-to-r from-blue-400/[0.04] via-indigo-400/[0.03] to-purple-400/[0.02] rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-32 right-1/6 w-40 h-40 bg-gradient-to-r from-violet-400/[0.03] via-purple-400/[0.04] to-fuchsia-400/[0.02] rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-50/30"></div>
         </div>
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -534,42 +512,70 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-4 bg-gradient-to-br from-gray-50/70 via-blue-50/40 to-indigo-50/30 relative overflow-hidden">
-        {/* Premium background elements */}
+      <section className="py-32 px-4 bg-gradient-to-br from-amber-50/20 via-orange-50/15 to-yellow-50/25 relative overflow-hidden">
+        {/* Jute bag inspired background - earthy and textured */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/[0.008] via-transparent to-indigo-900/[0.015]"></div>
-          {/* Beautiful grid lines for CTA */}
-          <div className="absolute inset-0 opacity-[0.02]">
+          {/* Base earthy gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-900/[0.06] via-orange-900/[0.04] to-yellow-900/[0.05]"></div>
+          
+          {/* Jute texture simulation - crosshatch pattern */}
+          <div className="absolute inset-0 opacity-[0.08]">
             <div className="h-full w-full" style={{
               backgroundImage: `
-                linear-gradient(rgba(99, 102, 241, 0.2) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99, 102, 241, 0.2) 1px, transparent 1px),
-                radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.08) 1px, transparent 1px)
+                linear-gradient(45deg, rgba(139, 69, 19, 0.15) 1px, transparent 1px),
+                linear-gradient(-45deg, rgba(139, 69, 19, 0.15) 1px, transparent 1px),
+                linear-gradient(rgba(160, 82, 45, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(160, 82, 45, 0.1) 1px, transparent 1px)
               `,
-              backgroundSize: '60px 60px, 60px 60px, 30px 30px'
+              backgroundSize: '12px 12px, 12px 12px, 4px 4px, 4px 4px'
             }}></div>
           </div>
-          {/* Enhanced floating orbs */}
-          <div className="absolute top-20 left-1/4 w-80 h-80 bg-gradient-to-r from-blue-400/[0.08] via-indigo-400/[0.06] to-purple-400/[0.04] rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-r from-purple-400/[0.06] via-pink-400/[0.08] to-fuchsia-400/[0.04] rounded-full blur-3xl animate-float-delayed"></div>
-          <div className="absolute top-1/2 left-1/6 w-48 h-48 bg-gradient-to-r from-cyan-400/[0.05] via-blue-400/[0.07] to-indigo-400/[0.05] rounded-full blur-3xl animate-pulse"></div>
-          {/* Enterprise mesh pattern with visible lines */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.015)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,#000_50%,transparent_100%)]"></div>
-          {/* Subtle geometric accents */}
-          <div className="absolute top-32 right-1/5 w-20 h-20 bg-gradient-to-br from-blue-200/[0.06] to-indigo-200/[0.08] rounded-2xl rotate-12 blur-sm"></div>
-          <div className="absolute bottom-40 left-1/5 w-16 h-16 bg-gradient-to-br from-purple-200/[0.04] to-violet-200/[0.06] rounded-xl -rotate-12 blur-sm"></div>
-          {/* Premium scanlines with better visibility */}
-          <div className="absolute inset-0 opacity-[0.006]">
+          
+          {/* Woven fabric texture */}
+          <div className="absolute inset-0 opacity-[0.05]">
             <div className="h-full w-full" style={{
               backgroundImage: `repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 4px,
-                rgba(59, 130, 246, 0.05) 4px,
-                rgba(59, 130, 246, 0.05) 8px
+                0deg,
+                rgba(139, 69, 19, 0.2),
+                rgba(139, 69, 19, 0.2) 2px,
+                transparent 2px,
+                transparent 6px
+              ), repeating-linear-gradient(
+                90deg,
+                rgba(160, 82, 45, 0.15),
+                rgba(160, 82, 45, 0.15) 2px,
+                transparent 2px,
+                transparent 6px
               )`
             }}></div>
           </div>
+          
+          {/* Organic floating elements - like natural fibers */}
+          <div className="absolute top-20 left-1/4 w-80 h-80 bg-gradient-to-r from-amber-400/[0.03] via-orange-400/[0.04] to-yellow-400/[0.02] rounded-full blur-3xl animate-float transform rotate-12"></div>
+          <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-r from-orange-400/[0.04] via-amber-400/[0.03] to-red-400/[0.02] rounded-full blur-3xl animate-float-delayed transform -rotate-12"></div>
+          <div className="absolute top-1/2 left-1/6 w-48 h-48 bg-gradient-to-r from-yellow-400/[0.025] via-amber-400/[0.035] to-orange-400/[0.025] rounded-full blur-3xl animate-pulse"></div>
+          
+          {/* Subtle hemp-like fiber patterns */}
+          <div className="absolute top-32 right-1/5 w-20 h-20 bg-gradient-to-br from-amber-200/[0.06] to-orange-200/[0.08] rounded-2xl rotate-45 blur-sm"></div>
+          <div className="absolute bottom-40 left-1/5 w-16 h-16 bg-gradient-to-br from-orange-200/[0.05] to-yellow-200/[0.06] rounded-xl -rotate-45 blur-sm"></div>
+          <div className="absolute top-1/3 right-1/3 w-12 h-12 bg-gradient-to-br from-yellow-200/[0.08] to-amber-200/[0.10] rounded-lg rotate-12 blur-sm"></div>
+          
+          {/* Natural fabric mesh overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(139,69,19,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(139,69,19,0.06)_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,#000_50%,transparent_100%)]"></div>
+          
+          {/* Burlap-style texture overlay */}
+          <div className="absolute inset-0 opacity-[0.08]">
+            <div className="h-full w-full" style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.4) 1px, transparent 1px),
+                               radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.3) 1px, transparent 1px)`,
+              backgroundSize: '8px 8px, 8px 8px',
+              backgroundPosition: '0 0, 4px 4px'
+            }}></div>
+          </div>
+          
+          {/* Organic edge highlight */}
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-300/40 to-transparent"></div>
         </div>
         
         <div className="max-w-5xl mx-auto text-center relative z-10">

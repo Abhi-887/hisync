@@ -42,20 +42,23 @@ export default function ProductHero() {
           className="absolute bottom-20 left-1/4 w-80 h-80 bg-gradient-to-r from-slate-200/50 to-blue-200/50 rounded-full blur-3xl"
         ></motion.div>
         
-        {/* Animated geometric accents */}
+        {/* Subtle geometric accents */}
         <motion.div
-          animate={{ rotate: [0, 360] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute top-16 right-16 w-24 h-24 border border-blue-300/60 rounded-full"
+          animate={{ 
+            rotate: [0, 360],
+            scale: [1, 1.05, 1]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute top-16 right-16 w-24 h-24 bg-gradient-to-r from-blue-100/30 to-indigo-100/30 rounded-full backdrop-blur-sm"
         ></motion.div>
         
         <motion.div
           animate={{ 
-            rotate: [45, 135, 45],
-            scale: [1, 1.2, 1]
+            rotate: [0, 90, 0],
+            scale: [1, 1.1, 1]
           }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-16 left-16 w-20 h-20 border-2 border-indigo-300/50 rounded-lg rotate-45"
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-16 left-16 w-20 h-20 bg-gradient-to-br from-slate-100/40 to-blue-100/40 rounded-2xl backdrop-blur-sm shadow-sm"
         ></motion.div>
         
         {/* Floating particles */}
@@ -114,7 +117,7 @@ export default function ProductHero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex justify-center lg:justify-start"
             >
-              <Badge className="px-6 py-3 bg-white/40 backdrop-blur-sm border-0 text-slate-700 shadow-md text-sm font-medium hover:shadow-lg transition-all duration-300">
+              <Badge className="px-6 py-3 bg-white/60 backdrop-blur-md text-slate-700 shadow-sm text-sm font-medium hover:bg-white/70 hover:shadow-md transition-all duration-300">
                 <Sparkles className="w-4 h-4 mr-2 text-blue-600" />
                 Make Investment Decisions
               </Badge>
@@ -146,7 +149,7 @@ export default function ProductHero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                    className="flex items-center space-x-3 p-4 rounded-lg bg-white/30 backdrop-blur-sm border-0 hover:bg-white/40 hover:shadow-md transition-all duration-300 group"
+                    className="flex items-center space-x-3 p-4 rounded-xl bg-white/50 backdrop-blur-md hover:bg-white/60 hover:shadow-lg transition-all duration-300 group"
                   >
                     <div className="text-blue-600 group-hover:text-blue-700 transition-colors">{item.icon}</div>
                     <span className="text-slate-700 font-medium text-sm">{item.text}</span>
@@ -166,7 +169,7 @@ export default function ProductHero() {
                 <span>Start Free Trial</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
-              <button className="px-8 py-4 border-2 border-slate-300 hover:border-slate-400 text-slate-700 hover:text-slate-800 hover:bg-slate-50 backdrop-blur-sm font-semibold rounded-2xl transition-all duration-300">
+              <button className="px-8 py-4 bg-white/60 backdrop-blur-md text-slate-700 hover:text-slate-800 hover:bg-white/70 font-semibold rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md">
                 Watch Demo
               </button>
             </motion.div>
@@ -185,8 +188,8 @@ export default function ProductHero() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-300/20 to-slate-300/20 rounded-[3rem] blur-2xl scale-105"></div>
               
               {/* Phone mockup */}
-              <div className="relative w-80 h-[600px] bg-gradient-to-br from-slate-800 to-slate-900 rounded-[3rem] p-3 shadow-2xl border border-slate-300/20">
-                <div className="w-full h-full bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-50 rounded-[2.5rem] overflow-hidden relative">
+              <div className="relative w-80 h-[600px] bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-3 shadow-2xl">
+                <div className="w-full h-full bg-gradient-to-br from-white via-blue-50/50 to-indigo-50/50 rounded-[2.5rem] overflow-hidden relative backdrop-blur-sm">
                   {/* Phone screen content */}
                   <div className="absolute inset-0 flex items-center justify-center p-8">
                     <div className="text-center space-y-6">
@@ -198,7 +201,7 @@ export default function ProductHero() {
                         <p className="text-blue-600 text-sm">Next-Gen Asset Control</p>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 text-slate-700 border border-slate-200/50 shadow-lg">
+                        <div className="bg-white/70 backdrop-blur-md rounded-2xl p-4 text-slate-700 shadow-lg">
                           <div className="text-sm text-blue-600 mb-1">Powered by</div>
                           <div className="text-lg font-bold text-slate-800">20+ years of</div>
                           <div className="text-base text-slate-600">Consulting and IT</div>
@@ -224,7 +227,7 @@ export default function ProductHero() {
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-8 -left-8 bg-gradient-to-br from-emerald-100/80 to-teal-100/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-emerald-200/50"
+                className="absolute -top-8 -left-8 bg-gradient-to-br from-emerald-50/90 to-teal-50/90 backdrop-blur-md p-4 rounded-2xl shadow-lg"
               >
                 <div className="text-2xl font-bold text-emerald-600">70%</div>
                 <div className="text-xs text-emerald-500">Time Saved</div>
@@ -233,7 +236,7 @@ export default function ProductHero() {
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -bottom-8 -right-8 bg-gradient-to-br from-blue-100/80 to-cyan-100/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-blue-200/50"
+                className="absolute -bottom-8 -right-8 bg-gradient-to-br from-blue-50/90 to-cyan-50/90 backdrop-blur-md p-4 rounded-2xl shadow-lg"
               >
                 <div className="text-2xl font-bold text-blue-600">AI</div>
                 <div className="text-xs text-blue-500">Powered</div>
@@ -243,13 +246,13 @@ export default function ProductHero() {
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute top-1/4 -right-16 w-12 h-12 border-2 border-blue-300/40 rounded-full"
+                className="absolute top-1/4 -right-16 w-12 h-12 bg-gradient-to-r from-blue-100/50 to-indigo-100/50 rounded-full backdrop-blur-sm"
               ></motion.div>
               
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute bottom-1/4 -left-16 w-8 h-8 bg-gradient-to-r from-purple-200/60 to-indigo-200/60 rounded-lg rotate-45"
+                className="absolute bottom-1/4 -left-16 w-8 h-8 bg-gradient-to-r from-purple-100/60 to-indigo-100/60 rounded-2xl backdrop-blur-sm"
               ></motion.div>
 
               {/* Additional bouncing elements */}
@@ -260,16 +263,16 @@ export default function ProductHero() {
                   rotate: [0, 180, 360]
                 }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/3 -left-20 w-6 h-6 bg-gradient-to-r from-pink-200/60 to-rose-200/60 rounded-full shadow-lg"
+                className="absolute top-1/3 -left-20 w-6 h-6 bg-gradient-to-r from-pink-100/70 to-rose-100/70 rounded-full shadow-sm backdrop-blur-sm"
               ></motion.div>
               
               <motion.div
                 animate={{ 
                   scale: [1, 1.3, 1],
-                  opacity: [0.5, 1, 0.5]
+                  opacity: [0.6, 1, 0.6]
                 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute bottom-1/3 -right-20 w-4 h-16 bg-gradient-to-b from-cyan-200/50 to-blue-200/50 rounded-full shadow-lg"
+                className="absolute bottom-1/3 -right-20 w-4 h-16 bg-gradient-to-b from-cyan-100/60 to-blue-100/60 rounded-full shadow-sm backdrop-blur-sm"
               ></motion.div>
             </div>
           </motion.div>
