@@ -54,14 +54,14 @@ export default function Navbar() {
   // Prevent rendering issues on SSR
   if (!mounted) {
     return (
-      <nav className="relative h-[60px] lg:h-[72px] bg-white/80 backdrop-blur-md border-b border-gray-200/30">
+      <nav className="absolute top-0 w-full h-[60px] lg:h-[72px] bg-transparent z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[60px] lg:h-[72px]">
-            <div className="w-[130px] h-[32px] bg-gray-200 animate-pulse rounded"></div>
+            <div className="w-[130px] h-[32px] bg-white/20 animate-pulse rounded"></div>
             <div className="hidden lg:flex space-x-4">
-              {[1,2,3,4,5].map(i => <div key={i} className="w-16 h-8 bg-gray-200 animate-pulse rounded"></div>)}
+              {[1,2,3,4,5].map(i => <div key={i} className="w-16 h-8 bg-white/20 animate-pulse rounded"></div>)}
             </div>
-            <div className="w-[100px] h-[36px] bg-gray-200 animate-pulse rounded"></div>
+            <div className="w-[100px] h-[36px] bg-white/20 animate-pulse rounded"></div>
           </div>
         </div>
       </nav>
@@ -91,10 +91,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`${isScrolled ? 'fixed top-0 z-[9999] w-full' : 'relative'} transition-all duration-300 ${
+      className={`${isScrolled ? 'fixed top-0 z-[9999] w-full' : 'absolute top-0 w-full z-50'} transition-all duration-500 ${
         isScrolled
           ? "bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-lg"
-          : "bg-white/80 backdrop-blur-md border-b border-gray-200/30"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,7 +124,9 @@ export default function Navbar() {
                       href="/"
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                        isScrolled 
+                          ? "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                          : "bg-transparent hover:bg-white/20 text-gray-900 hover:text-gray-700 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
                       )}
                     >
                       Home
@@ -139,7 +141,9 @@ export default function Navbar() {
                       onClick={() => scrollToSection("#services")}
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                        isScrolled 
+                          ? "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                          : "bg-transparent hover:bg-white/20 text-gray-900 hover:text-gray-700 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
                       )}
                     >
                       Services
@@ -154,7 +158,9 @@ export default function Navbar() {
                       href="/product"
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                        isScrolled 
+                          ? "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                          : "bg-transparent hover:bg-white/20 text-gray-900 hover:text-gray-700 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
                       )}
                     >
                       Our Product
@@ -169,7 +175,9 @@ export default function Navbar() {
                       href="/about"
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                        isScrolled 
+                          ? "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                          : "bg-transparent hover:bg-white/20 text-gray-900 hover:text-gray-700 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
                       )}
                     >
                       About
@@ -184,7 +192,9 @@ export default function Navbar() {
                       href="/contact"
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                        isScrolled 
+                          ? "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                          : "bg-transparent hover:bg-white/20 text-gray-900 hover:text-gray-700 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
                       )}
                     >
                       Contact Us
@@ -200,7 +210,12 @@ export default function Navbar() {
             <Button
               variant="ghost"
               size="sm"
-              className="text-gray-600 hover:text-gray-900 hover:bg-gray-100/60 font-medium px-4 py-2 rounded-xl transition-all duration-200 h-9"
+              className={cn(
+                "font-medium px-4 py-2 rounded-xl transition-all duration-200 h-9",
+                isScrolled 
+                  ? "text-gray-600 hover:text-gray-900 hover:bg-gray-100/60"
+                  : "text-gray-900 hover:text-gray-700 hover:bg-white/20"
+              )}
             >
               <Phone className="w-4 h-4 mr-2" />
               <span className="hidden lg:inline">Schedule Call</span>
@@ -219,14 +234,25 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 rounded-xl hover:bg-gray-100/60 transition-all duration-200"
+            className={cn(
+              "lg:hidden p-2 rounded-xl transition-all duration-200",
+              isScrolled 
+                ? "hover:bg-gray-100/60" 
+                : "hover:bg-white/20"
+            )}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
             <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-              <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-              <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+              <span className={`block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
+                isScrolled ? 'bg-gray-600' : 'bg-gray-900'
+              } ${isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+              <span className={`block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
+                isScrolled ? 'bg-gray-600' : 'bg-gray-900'
+              } ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+              <span className={`block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${
+                isScrolled ? 'bg-gray-600' : 'bg-gray-900'
+              } ${isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
             </div>
           </button>
         </div>
