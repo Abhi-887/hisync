@@ -12,13 +12,13 @@ export default function ProductHero() {
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated grid pattern */}
         <div className="absolute inset-0 opacity-[0.04]">
-          <div className="h-full w-full animate-pulse" style={{
-            backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '40px 40px'
-          }}></div>
+          <div 
+            className="h-full w-full animate-pulse" 
+            style={{
+              backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)',
+              backgroundSize: '40px 40px'
+            }}
+          ></div>
         </div>
         
         {/* Floating animated orbs */}
@@ -87,8 +87,7 @@ export default function ProductHero() {
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           className="absolute inset-0" 
           style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.15) 1px, transparent 1px),
-                             radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.15) 1px, transparent 1px)`,
+            backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.15) 1px, transparent 1px), radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.15) 1px, transparent 1px)',
             backgroundSize: '80px 80px'
           }}
         ></motion.div>
@@ -167,6 +166,7 @@ export default function ProductHero() {
                 Watch Demo
               </button>
             </motion.div>
+            </div>
           </motion.div>
 
           {/* Right Content - Phone Mockup */}
