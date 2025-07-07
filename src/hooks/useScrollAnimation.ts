@@ -16,14 +16,14 @@ export interface ScrollAnimationOptions {
 export const useScrollAnimation = (options: ScrollAnimationOptions = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   const {
-    threshold = 0.1,
-    rootMargin = '0px',
+    threshold = 0.15,
+    rootMargin = '0px 0px -30px 0px',
     triggerOnce = true,
     delay = 0,
-    duration = 600,
+    duration = 700,
     animationType = 'fade',
     direction = 'up'
   } = options;
@@ -31,6 +31,19 @@ export const useScrollAnimation = (options: ScrollAnimationOptions = {}) => {
   useEffect(() => {
     const element = elementRef.current;
     if (!element) return;
+
+    // Add initial styles to prevent blinking
+    element.style.transition = 'none';
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    
+    // Force a reflow
+    element.offsetHeight;
+    
+    // Enable transitions after a frame
+    requestAnimationFrame(() => {
+      element.style.transition = `all ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+    });
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -54,10 +67,10 @@ export const useScrollAnimation = (options: ScrollAnimationOptions = {}) => {
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, [threshold, rootMargin, triggerOnce, delay, hasAnimated]);
+  }, [threshold, rootMargin, triggerOnce, delay, hasAnimated, duration]);
 
   const getAnimationClasses = () => {
-    const baseClasses = `transition-all duration-${duration} ease-out`;
+    const baseClasses = `transition-all duration-${duration} ease-out ultra-smooth`;
     
     if (!isVisible) {
       switch (animationType) {
@@ -65,16 +78,16 @@ export const useScrollAnimation = (options: ScrollAnimationOptions = {}) => {
           return `${baseClasses} opacity-0`;
         case 'slide':
           const slideMap = {
-            up: 'translate-y-8 opacity-0',
-            down: 'translate-y-[-2rem] opacity-0',
-            left: 'translate-x-8 opacity-0',
-            right: 'translate-x-[-2rem] opacity-0'
+            up: 'translate-y-6 opacity-0',
+            down: 'translate-y-[-1.5rem] opacity-0',
+            left: 'translate-x-6 opacity-0',
+            right: 'translate-x-[-1.5rem] opacity-0'
           };
           return `${baseClasses} ${slideMap[direction]}`;
         case 'scale':
           return `${baseClasses} scale-95 opacity-0`;
         case 'rotate':
-          return `${baseClasses} rotate-3 opacity-0`;
+          return `${baseClasses} rotate-1 opacity-0`;
         case 'bounce':
           return `${baseClasses} translate-y-4 opacity-0`;
         default:
@@ -100,19 +113,39 @@ export const useStaggeredAnimation = (
   const [visibleItems, setVisibleItems] = useState<boolean[]>(
     new Array(itemsCount).fill(false)
   );
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const {
     threshold = 0.1,
-    rootMargin = '0px',
+    rootMargin = '0px 0px -50px 0px',
     triggerOnce = true,
-    staggerDelay = 100,
-    duration = 600
+    staggerDelay = 150,
+    duration = 700
   } = options;
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+
+    // Initialize all items as hidden
+    const items = container.children;
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i] as HTMLElement;
+      if (item) {
+        item.style.transition = 'none';
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        
+        // Force a reflow
+        item.offsetHeight;
+        
+        // Enable transitions after a frame
+        requestAnimationFrame(() => {
+          item.style.transition = `all ${duration}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+          item.style.transitionDelay = `${i * staggerDelay}ms`;
+        });
+      }
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -140,10 +173,10 @@ export const useStaggeredAnimation = (
     observer.observe(container);
 
     return () => observer.disconnect();
-  }, [itemsCount, threshold, rootMargin, triggerOnce, staggerDelay]);
+  }, [itemsCount, threshold, rootMargin, triggerOnce, staggerDelay, duration]);
 
   const getItemAnimationClasses = (index: number) => {
-    const baseClasses = `transition-all duration-${duration} ease-out`;
+    const baseClasses = `transition-all duration-${duration} ease-out ultra-smooth`;
     
     if (!visibleItems[index]) {
       return `${baseClasses} opacity-0 translate-y-6`;
