@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function FooterSection() {
@@ -11,13 +10,7 @@ export default function FooterSection() {
         <div className="grid lg:grid-cols-6 gap-12 mb-16">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="flex items-center space-x-3 mb-6"
-            >
+            <div className="flex items-center space-x-3 mb-6 animate-fade-in">
              <Image
                                src="/images/logo/hisync_logo_black_one.webp"
                                alt="HISYNC Logo"
@@ -26,26 +19,14 @@ export default function FooterSection() {
                                // className="w-10 h-10 object-contain"
                                priority
                              />
-            </motion.div>
+            </div>
             
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-slate-600 leading-relaxed mb-8 max-w-sm"
-            >
+            <p className="text-slate-600 leading-relaxed mb-8 max-w-sm animate-fade-in-delay-100">
               Integrated transformation partner for enterprise success. Strategic consulting meets custom technology solutions.
-            </motion.p>
+            </p>
             
             {/* Newsletter */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
+            <div className="space-y-4 animate-fade-in-delay-200">
               <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wider">
                 Stay Updated
               </h4>
@@ -59,7 +40,7 @@ export default function FooterSection() {
                   Subscribe
                 </button>
               </div>
-            </motion.div>
+            </div>
           </div>
           
           {/* Links Grid */}
@@ -106,13 +87,9 @@ export default function FooterSection() {
                 ]
               }
             ].map((column, index) => (
-              <motion.div 
+              <div 
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                viewport={{ once: true }}
-                className="space-y-4"
+                className={`space-y-4 animate-fade-in-delay-${(index + 1) * 100}`}
               >
                 <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wider">
                   {column.title}
@@ -129,7 +106,7 @@ export default function FooterSection() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

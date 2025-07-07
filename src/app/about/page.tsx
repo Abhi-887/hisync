@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ArrowLeft, Shield, Award, Users, CheckCircle, Linkedin, Globe, Target, TrendingUp, Star, Sparkles, Brain, Zap, Rocket, Building2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -99,24 +98,14 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto relative z-10">
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
+          <div className="text-center animate-fade-in-up">
             {/* Premium badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-8"
-            >
+            <div className="mb-8 animate-fade-in-scale">
               <Badge className="px-6 py-3 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 border-blue-200/50 text-blue-700 backdrop-blur-sm shadow-lg text-sm font-medium hover:shadow-xl transition-all duration-300">
                 <Sparkles className="w-4 h-4 mr-2" />
                 Enterprise Innovation Leaders
               </Badge>
-            </motion.div>
+            </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 mb-8 leading-[0.9] tracking-tight">
               About
@@ -131,12 +120,7 @@ export default function AboutPage() {
             </p>
 
             {/* Stats preview */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16"
-            >
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16 animate-fade-in-delay-300">
               {[
                 { number: "20+", label: "Years Experience" },
                 { number: "500+", label: "Enterprise Clients" },
@@ -147,8 +131,8 @@ export default function AboutPage() {
                   <div className="text-sm text-slate-500 font-medium">{stat.label}</div>
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -160,13 +144,7 @@ export default function AboutPage() {
         </div>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
+            <div className="space-y-8 animate-slide-in-left">
               <Badge 
                 variant="outline" 
                 className="px-6 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 border-blue-200/50 font-medium shadow-sm hover:shadow-md transition-all duration-300"
@@ -209,15 +187,9 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
+            <div className="relative animate-slide-in-right">
               {/* Enhanced image container */}
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-indigo-600/10 rounded-3xl transform rotate-3"></div>
@@ -240,7 +212,7 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -289,13 +261,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
+          <div className="text-center mb-20 animate-fade-in-up">
             <Badge 
               variant="outline" 
               className="mb-8 px-6 py-3 bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-700 border-indigo-200/50 font-medium shadow-sm hover:shadow-md transition-all duration-300"
@@ -315,7 +281,7 @@ export default function AboutPage() {
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
               We seamlessly blend strategic consulting with breakthrough technology, delivering end-to-end solutions that transform how enterprises operate and compete.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -362,14 +328,10 @@ export default function AboutPage() {
                 bgColor: "bg-pink-50/50"
               }
             ].map((advantage, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className={`group relative overflow-hidden ${advantage.bgColor} rounded-3xl p-8 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500 border border-white/30 hover:border-white/50 backdrop-blur-sm`}
+                className={`group relative overflow-hidden ${advantage.bgColor} rounded-3xl p-8 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500 border border-white/30 hover:border-white/50 backdrop-blur-sm animate-fade-in-stagger hover:scale-105 hover:-translate-y-2`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Enhanced background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-blue-50/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -387,7 +349,7 @@ export default function AboutPage() {
                     {advantage.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -400,13 +362,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-50/30"></div>
         </div>
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
+          <div className="text-center mb-20 animate-fade-in-up">
             <Badge 
               variant="outline" 
               className="mb-8 px-6 py-3 bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 border-purple-200/50 font-medium shadow-sm hover:shadow-md transition-all duration-300"
@@ -444,17 +400,14 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-10">
             {teamMembers.map((member, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.15 }}
-                viewport={{ once: true }}
-                className="group relative bg-gradient-to-br from-white to-slate-50/30 rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100/50 hover:border-slate-200/50 overflow-hidden"
+                className={`group relative bg-gradient-to-br from-white to-slate-50/30 rounded-3xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100/50 hover:border-slate-200/50 overflow-hidden animate-fade-in-stagger hover:scale-105 hover:-translate-y-2`}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
                 {/* Subtle background gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 via-transparent to-purple-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -505,7 +458,7 @@ export default function AboutPage() {
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -579,13 +532,7 @@ export default function AboutPage() {
         </div>
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-10"
-          >
+          <div className="space-y-10 animate-fade-in-up">
             <Badge className="px-6 py-3 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 border-blue-200/50 text-blue-700 backdrop-blur-sm shadow-lg">
               <Sparkles className="w-4 h-4 mr-2" />
               Ready to Transform?
@@ -635,7 +582,7 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

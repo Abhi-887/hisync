@@ -31,7 +31,7 @@ export default function PremiumButton({
   const variants = {
     primary: "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl focus:ring-blue-500 border-0",
     secondary: "bg-gradient-to-r from-slate-100 to-slate-200 hover:from-slate-200 hover:to-slate-300 text-slate-900 shadow-md hover:shadow-lg focus:ring-slate-500 border border-slate-200",
-    outline: "border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-md hover:shadow-lg focus:ring-blue-500 bg-white hover:border-blue-700",
+   outline: "border-2 border-blue-600 text-blue-600 shadow-md hover:shadow-lg focus:ring-blue-500 bg-white hover:border-blue-700",
     ghost: "text-slate-600 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 focus:ring-blue-500 border-0",
   };
 

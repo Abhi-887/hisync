@@ -5,11 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Shield, Zap, Users } from "lucide-react";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
+import { fadeInUp, staggerContainer, staggerItem, viewport } from "@/lib/animations";
 
 export default function ServicesSection() {
   return (

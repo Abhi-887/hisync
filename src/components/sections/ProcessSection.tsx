@@ -8,19 +8,7 @@ import InteractiveCounter from "./InteractiveCounter";
 import DemoPreview from "./DemoPreview";
 import { BarChart3, Users, Award, Shield } from "lucide-react";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
-};
-
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
+import { fadeInUp, staggerContainer, staggerItem, viewport } from "@/lib/animations";
 
 export default function ProcessSection() {
   return (
@@ -51,10 +39,10 @@ export default function ProcessSection() {
         </div>
         
         {/* Floating Elements */}
-        <div className="absolute top-1/3 left-1/3 w-2 h-2 bg-blue-400/70 rounded-full animate-ping delay-200"></div>
-        <div className="absolute top-2/3 right-1/3 w-1.5 h-1.5 bg-green-400/70 rounded-full animate-ping delay-800"></div>
-        <div className="absolute bottom-1/3 left-2/3 w-1 h-1 bg-purple-400/70 rounded-full animate-ping delay-1400"></div>
-        <div className="absolute top-1/2 left-1/4 w-2.5 h-2.5 bg-indigo-400/60 rounded-full animate-ping delay-600"></div>
+        <div className="absolute top-1/3 left-1/3 w-2 h-2 bg-blue-400/70 rounded-full opacity-60"></div>
+        <div className="absolute top-2/3 right-1/3 w-1.5 h-1.5 bg-green-400/70 rounded-full opacity-60"></div>
+        <div className="absolute bottom-1/3 left-2/3 w-1 h-1 bg-purple-400/70 rounded-full opacity-60"></div>
+        <div className="absolute top-1/2 left-1/4 w-2.5 h-2.5 bg-indigo-400/60 rounded-full opacity-60"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -107,7 +95,7 @@ export default function ProcessSection() {
           </motion.h3>
           
           <motion.div 
-            variants={stagger}
+            variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}

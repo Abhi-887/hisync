@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { 
   Phone, 
   Mail, 
@@ -95,15 +94,17 @@ export default function ContactPage() {
     return (
       <>
         <Navbar />
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 flex items-center justify-center px-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-center max-w-md mx-auto"
-          >
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-green-600" />
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden flex items-center justify-center px-4">
+          {/* Premium Background Pattern */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.02)_25%,rgba(59,130,246,0.02)_50%,transparent_50%,transparent_75%,rgba(59,130,246,0.02)_75%)] bg-[length:32px_32px]"></div>
+          
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+          
+          <div className="text-center max-w-md mx-auto animate-fade-in-scale relative z-10">
+            <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+              <CheckCircle className="w-10 h-10 text-white" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Thank You!</h2>
             <p className="text-slate-600 mb-8">
@@ -111,11 +112,11 @@ export default function ContactPage() {
             </p>
             <Button
               onClick={() => setIsSubmitted(false)}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white hover:scale-105 transition-transform duration-200 shadow-xl"
             >
               Send Another Message
             </Button>
-          </motion.div>
+          </div>
         </div>
         <FooterSection />
       </>
@@ -125,17 +126,31 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/20 relative overflow-hidden">
+        {/* Premium Background Elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.08),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(99,102,241,0.05),transparent_50%)]"></div>
+        
+        {/* Corporate Pattern Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.02)_25%,rgba(59,130,246,0.02)_50%,transparent_50%,transparent_75%,rgba(59,130,246,0.02)_75%)] bg-[length:60px_60px]"></div>
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        {/* Professional Accent Elements */}
+        <div className="absolute top-20 left-20 w-3 h-3 bg-blue-500/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-40 right-32 w-2 h-2 bg-indigo-500/15 rounded-full animate-pulse animation-delay-200"></div>
+        <div className="absolute bottom-32 left-40 w-2.5 h-2.5 bg-blue-400/20 rounded-full animate-pulse animation-delay-400"></div>
+        
+        {/* Corporate Lines */}
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-200/30 to-transparent"></div>
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-indigo-200/20 to-transparent"></div>
+        
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto mb-16"
-          >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100/80 text-blue-700 text-sm font-semibold mb-6">
+          <div className="text-center max-w-4xl mx-auto mb-16 animate-fade-in-up">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100/80 border border-blue-200/50 text-blue-700 text-sm font-semibold mb-6 shadow-sm">
               <Building2 className="w-4 h-4 mr-2" />
               Enterprise Contact
             </div>
@@ -146,15 +161,11 @@ export default function ContactPage() {
             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
               Ready to transform your business? Our enterprise solutions team is here to help you achieve your goals with cutting-edge technology and expert guidance.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
+            <div className="animate-fade-in-delay-200">
               <Card className="p-8 shadow-xl border-0 bg-white/70 backdrop-blur-xl">
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-slate-900 mb-2">Get In Touch</h2>
@@ -256,7 +267,7 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <div className="hover:scale-105 transition-transform duration-200">
                     <Button
                       type="submit"
                       disabled={isSubmitting}
@@ -274,24 +285,17 @@ export default function ContactPage() {
                         </div>
                       )}
                     </Button>
-                  </motion.div>
+                  </div>
                 </form>
               </Card>
-            </motion.div>
+            </div>
 
             {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="space-y-8"
-            >
+            <div className="space-y-8 animate-fade-in-delay-400">
               {contactInfo.map((info, index) => (
-                <motion.div
+                <div
                   key={info.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
+                  className={`animate-fade-in-delay-${(index + 1) * 100}`}
                 >
                   <Card className="p-6 shadow-lg border-0 bg-white/60 backdrop-blur-xl hover:bg-white/80 transition-all duration-300 group">
                     <div className="flex items-start space-x-4">
@@ -307,19 +311,14 @@ export default function ContactPage() {
                       </div>
                     </div>
                   </Card>
-                </motion.div>
+                </div>
               ))}
 
               {/* Quick Actions */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.6 }}
-                className="space-y-4"
-              >
+              <div className="space-y-4 animate-fade-in-delay-500">
                 <h3 className="text-xl font-semibold text-slate-900 mb-4">Quick Actions</h3>
                 
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <div className="hover:scale-105 transition-transform duration-200">
                   <Button
                     variant="outline"
                     className="w-full justify-between text-left h-auto p-4 border-slate-200 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-300 group"
@@ -333,9 +332,9 @@ export default function ContactPage() {
                     </div>
                     <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
                   </Button>
-                </motion.div>
+                </div>
 
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <div className="hover:scale-105 transition-transform duration-200">
                   <Button
                     variant="outline"
                     className="w-full justify-between text-left h-auto p-4 border-slate-200 hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-300 group"
@@ -349,7 +348,7 @@ export default function ContactPage() {
                     </div>
                     <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
                   </Button>
-                </motion.div>
+                </div>
 
                 {/* Social Links */}
                 <div className="pt-6">
@@ -360,19 +359,17 @@ export default function ContactPage() {
                       { icon: <Twitter className="w-5 h-5" />, color: "hover:bg-sky-500" },
                       { icon: <Facebook className="w-5 h-5" />, color: "hover:bg-blue-700" }
                     ].map((social, index) => (
-                      <motion.button
+                      <button
                         key={index}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className={`w-10 h-10 bg-slate-100 hover:text-white ${social.color} rounded-xl flex items-center justify-center transition-all duration-300`}
+                        className={`w-10 h-10 bg-slate-100 hover:text-white ${social.color} rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110`}
                       >
                         {social.icon}
-                      </motion.button>
+                      </button>
                     ))}
                   </div>
                 </div>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -380,32 +377,20 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50/50">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <div className="text-center mb-12 animate-fade-in-up">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Visit Our Office</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               Located in Noida, Sector 132, our office is easily accessible and equipped with modern facilities for client meetings.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-slate-100 to-slate-200 h-96 rounded-2xl flex items-center justify-center"
-          >
+          <div className="bg-gradient-to-br from-slate-100 to-slate-200 h-96 rounded-2xl flex items-center justify-center animate-fade-in-delay-200">
             <div className="text-center">
               <MapPin className="w-16 h-16 text-slate-400 mx-auto mb-4" />
               <p className="text-slate-600 text-lg">Interactive Map Coming Soon</p>
               <p className="text-slate-500 text-sm">A708, Sector 132, Noida, Uttar Pradesh 201304</p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
       </div>

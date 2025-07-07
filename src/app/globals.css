@@ -2,6 +2,22 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Prevent initial flash/blink on page load */
+html {
+  opacity: 1 !important;
+}
+
+body {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure motion elements are visible by default */
+.motion-no-blink {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -160,13 +176,15 @@ body {
   transition-duration: 150ms;
 }
 
-/* Smooth animations and performance */
+/* Smooth animations and performance optimizations */
 .smooth-animation {
   will-change: transform, opacity;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   perspective: 1000px;
   -webkit-perspective: 1000px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* Reduce motion for accessibility */
@@ -175,6 +193,12 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .motion-reduce-disable {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
@@ -183,6 +207,11 @@ body {
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   will-change: transform;
+}
+
+/* Prevent layout shifts */
+.prevent-layout-shift {
+  contain: layout style paint;
 }
 
 /* Remove text selection jitter */
@@ -380,7 +409,7 @@ html {
   animation: gradient-shift 15s ease infinite;
 }
 
-/* Shimmer effect for premium elements */
+/* Enhanced shimmer effect for premium elements */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
@@ -399,4 +428,152 @@ html {
   );
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Custom fade-in-up animation */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Custom fade-in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.animate-fade-in-delay-100 {
+  animation: fade-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 100ms;
+}
+
+.animate-fade-in-delay-200 {
+  animation: fade-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 200ms;
+}
+
+.animate-fade-in-delay-300 {
+  animation: fade-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 300ms;
+}
+
+.animate-fade-in-delay-400 {
+  animation: fade-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 400ms;
+}
+
+/* Slide animations */
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Staggered fade-in animation */
+@keyframes fade-in-stagger {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-stagger {
+  animation: fade-in-stagger 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Custom fade-in-scale animation */
+@keyframes fade-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* Animation delays */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
 }

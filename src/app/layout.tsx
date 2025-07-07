@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -21,7 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} font-sans antialiased smooth-animation`}>
+      <body className={`${inter.className} font-sans antialiased smooth-animation prevent-layout-shift`}>
+        <PerformanceOptimizer />
         <SmoothScroll />
         {children}
       </body>
