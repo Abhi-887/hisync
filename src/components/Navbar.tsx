@@ -8,11 +8,9 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
@@ -30,7 +28,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 100);
     };
     
     if (mounted) {
@@ -56,7 +54,7 @@ export default function Navbar() {
   // Prevent rendering issues on SSR
   if (!mounted) {
     return (
-      <nav className="fixed top-0 z-[100] w-full h-[60px] lg:h-[72px] bg-white/80 backdrop-blur-2xl border-b border-gray-200/20">
+      <nav className="relative h-[60px] lg:h-[72px] bg-white/80 backdrop-blur-md border-b border-gray-200/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[60px] lg:h-[72px]">
             <div className="w-[130px] h-[32px] bg-gray-200 animate-pulse rounded"></div>
@@ -93,10 +91,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 z-[100] w-full transition-all duration-300 ${
+      className={`${isScrolled ? 'fixed top-0 z-[9999] w-full' : 'relative'} transition-all duration-300 ${
         isScrolled
           ? "bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-lg"
-          : "bg-transparent"
+          : "bg-white/80 backdrop-blur-md border-b border-gray-200/30"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,52 +132,19 @@ export default function Navbar() {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
 
-                {/* Services with Dropdown */}
+                {/* Services */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger 
-                    className="bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl data-[state=open]:bg-gray-100/60 data-[state=open]:text-gray-900 h-9 px-4 text-sm"
-                  >
-                    Services
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                      <div className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <button
-                            onClick={() => scrollToSection("#services")}
-                            className="flex h-full w-full select-none flex-col justify-end rounded-2xl bg-gradient-to-b from-blue-50 to-blue-100 p-6 no-underline outline-none focus:shadow-md group hover:from-blue-100 hover:to-blue-150 transition-all duration-300"
-                          >
-                            <div className="mb-2 mt-4 text-lg font-semibold text-blue-900">
-                              Our Services
-                            </div>
-                            <p className="text-sm leading-tight text-blue-700 group-hover:text-blue-800">
-                              Comprehensive enterprise solutions tailored to your business needs
-                            </p>
-                          </button>
-                        </NavigationMenuLink>
-                      </div>
-                      {services.map((service) => (
-                        <NavigationMenuLink key={service.title} asChild>
-                          <button
-                            onClick={() => scrollToSection(service.href)}
-                            className="block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-blue-600 focus:bg-accent focus:text-accent-foreground group text-left"
-                          >
-                            <div className="flex items-center space-x-2 mb-1">
-                              <div className="text-blue-600 group-hover:text-blue-700 transition-colors">
-                                {service.icon}
-                              </div>
-                              <div className="text-sm font-semibold leading-none text-gray-900 group-hover:text-blue-700">
-                                {service.title}
-                              </div>
-                            </div>
-                            <p className="line-clamp-2 text-sm leading-snug text-gray-600 group-hover:text-blue-600">
-                              {service.description}
-                            </p>
-                          </button>
-                        </NavigationMenuLink>
-                      ))}
-                    </div>
-                  </NavigationMenuContent>
+                  <NavigationMenuLink asChild>
+                    <button
+                      onClick={() => scrollToSection("#services")}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "bg-transparent hover:bg-gray-100/60 text-gray-600 hover:text-gray-900 font-medium transition-all duration-300 rounded-xl h-9 px-4 text-sm"
+                      )}
+                    >
+                      Services
+                    </button>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 {/* Product */}

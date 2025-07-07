@@ -11,7 +11,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ showTooltip, setShowTooltip }: HeroSectionProps) {
   return (
-    <section id="home" className="relative pt-32 pb-20 px-4 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 section-transition motion-no-blink">
+    <section id="home" className="relative pt-16 lg:pt-20 pb-20 px-4 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 section-transition motion-no-blink">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden smooth-animation">
         {/* Gradient Orbs */}

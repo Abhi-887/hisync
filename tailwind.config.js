@@ -84,6 +84,10 @@ module.exports = {
         'float': 'float 6s ease-in-out infinite',
         'float-delayed': 'float 6s ease-in-out infinite 2s',
       },
+      zIndex: {
+        '9999': '9999',
+        '10000': '10000',
+      },
       keyframes: {
         'fade-in': {
           '0%': { opacity: '0' },
